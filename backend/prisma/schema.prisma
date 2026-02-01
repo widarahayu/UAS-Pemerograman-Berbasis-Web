@@ -1,0 +1,68 @@
+// Koneksi Database
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Enum untuk Peran User
+enum Role {
+  USER
+  ADMIN
+}
+
+// Tabel Pengguna
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String // Hashed password
+  name      String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relasi
+  history WatchHistory[]
+}
+
+// Tabel Film (Katalog Lokal)
+// Data diambil dari TMDB tapi disimpan di sini untuk fitur CRUD Admin
+model Movie {
+  id           Int      @id @default(autoincrement())
+  tmdbId       Int      @unique // ID referensi dari TMDB
+  title        String
+  overview     String   @db.Text
+  posterPath   String?
+  backdropPath String?
+  releaseDate  String?
+  voteAverage  Float?
+  genres       String? // Disimpan sebagai string JSON atau CSV (misal: "Action,Drama")
+  isFeatured   Boolean  @default(false) // Untuk banner utama
+  videoUrl     String? // URL Video (bisa embed Youtube dari TMDB atau custom)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Availability Dates
+  availabilityStart DateTime? // Kapan film mulai bisa ditonton (Null = Segera)
+  availabilityEnd   DateTime? // Kapan film berhenti tayang (Null = Selamanya/Permanen)
+
+  // Relasi
+  histories WatchHistory[]
+}
+
+// Tabel Riwayat Tontonan
+model WatchHistory {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  movieId   Int
+  watchedAt DateTime @default(now())
+
+  // Relasi
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movie Movie @relation(fields: [movieId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, movieId]) // Mencegah duplikasi history untuk film yang sama
+}
