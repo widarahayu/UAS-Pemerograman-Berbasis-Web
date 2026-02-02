@@ -14,7 +14,7 @@
 
 ---
 
-## 📚 Tugas Ujian Akhir Semester (UAS)
+## Tugas Ujian Akhir Semester (UAS)
 
 ### Pemrograman Berbasis Web
 
@@ -31,7 +31,7 @@
 
 ---
 
-## 🛠 Teknologi Yang Digunakan
+## Teknologi Yang Digunakan
 
 ### Backend
 
@@ -62,7 +62,7 @@
 
 ---
 
-## 📦 Cara Instalasi
+## Cara Instalasi
 
 ### Prasyarat
 
@@ -128,7 +128,7 @@ npx prisma db seed
 
 ---
 
-## 🚀 Cara Menjalankan Aplikasi
+## Cara Menjalankan Aplikasi
 
 ### 1. Jalankan Backend
 
@@ -163,7 +163,7 @@ Buka browser dan akses: **http://localhost:5173**
 
 ---
 
-## 📸 Screenshot Aplikasi
+##  Screenshot Aplikasi
 
 ### Halaman User
 
@@ -245,27 +245,27 @@ Buka browser dan akses: **http://localhost:5173**
 
 ---
 
-## ✨ Fitur Aplikasi
+##  Fitur Aplikasi
 
 ### Fitur User
 
-- 🔐 Login dan Register
-- 🎬 Melihat daftar film
-- 🔍 Mencari film
-- 📄 Melihat detail film (cast, trailer, galeri)
-- 📜 Riwayat tontonan
+-  Login dan Register
+-  Melihat daftar film
+-  Mencari film
+-  Melihat detail film (cast, trailer, galeri)
+-  Riwayat tontonan
 
 ### Fitur Admin
 
-- 📊 Dashboard statistik
-- ➕ Tambah film dari TMDB
-- ✏️ Edit ketersediaan film
-- 🗑️ Hapus film
-- 👥 Kelola pengguna
+-  Dashboard statistik
+-  Tambah film dari TMDB
+-  Edit ketersediaan film
+-  Hapus film
+-  Kelola pengguna
 
 ---
 
-## 📁 Struktur Folder
+##  Struktur Folder
 
 ```
 movieku/
@@ -297,7 +297,7 @@ movieku/
 
 ---
 
-## 🙏 Credits
+##  Credits
 
 - Data film dari [TMDB](https://www.themoviedb.org/)
 - UI Components dari [DaisyUI](https://daisyui.com/)
