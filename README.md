@@ -25,7 +25,7 @@
 
 ---
 
-## 📖 Tentang Aplikasi
+##  Tentang Aplikasi
 
 **MovieKu** adalah aplikasi web streaming film modern yang terintegrasi dengan [TMDB API](https://www.themoviedb.org/). Aplikasi ini memungkinkan pengguna untuk menjelajahi koleksi film, mencari film favorit, dan menyimpan riwayat tontonan.
 
